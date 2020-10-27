@@ -14,6 +14,7 @@ RUN pip3 install python-telegram-bot --upgrade
 
 COPY message.py /code/message.py
 COPY telegram.token /code/telegram.token
+COPY telegram.id /code/telegram.id
 COPY main.sh /code/main.sh
 RUN chmod +x /code/main.sh
 

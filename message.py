@@ -7,12 +7,16 @@ def get_credentials(file_path):
     f = open(file_path)
     return f.readline().strip()
 
+def get_chat_id(file_path):
+    f = open(file_path)
+    return f.readline().strip()
+
 def main():
     cred = get_credentials("/code/telegram.token")
+    chat_id = get_credentials("/code/telegram.id")
     message = " ".join(sys.argv[1:])
     bot = telegram.Bot(token=cred)
-    #chat_id = bot.get_updates()[-1].message.chat_id
-    bot.send_message(chat_id=CHAT_ID, text=message)
+    bot.send_message(chat_id=chat_id, text=message)
 
 if __name__ == "__main__":
     main()
