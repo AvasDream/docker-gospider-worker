@@ -16,4 +16,5 @@ function main {
 
 { time main ; } 2> time.txt
 t=$(cat time.txt | grep real | cut -d " " -f2)
-notify "Gospider for $DOMAIN: $(cat $data_dir/gospider/* | wc -l) Lines in $t"
+d=$(cat $data_dir/$URL_LIST | wc -l)
+notify "Gospider for $DOMAIN with $d subdomains: $(cat $data_dir/gospider/* | wc -l) Lines in $t"
